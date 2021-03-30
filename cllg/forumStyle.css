@@ -1,0 +1,67 @@
+.box{
+	/*background-color: grey;
+	margin-left: 15%;
+	width: 70%;
+	min-height: 40rem;
+	margin-bottom: 30px;
+	overflow-y: scroll;
+	display: flex;
+	box-shadow: 0px 0px 8px blue;*/
+}
+.msg,.text{
+	padding: 20px;
+	border:5px solid black;
+	background-color: white;
+	margin: 20px;
+	border-style: ridge;
+	color: black;
+}
+.msg{
+	height: fill-content;
+	display: block;
+}
+.mybox{
+	background-color: grey;
+	margin-left: 15%;
+	margin-bottom: 30px;
+	width:70%;
+	height:200px;
+	opacity: 0.7;
+	box-shadow: 0px 0px 8px blue;
+}
+.text{
+	width: 90%;
+	font-size: 20px;
+}
+.dp{
+	border-radius: 50%;
+}
+.send{
+	font-size: 20px;
+	float: right;
+	margin-top: -13px;
+	margin-right: 30px;
+	background-color: green;
+	border-style: solid;
+	border-color: black;
+}
+.send:hover{
+	background-color: darkgreen;
+	cursor: pointer;
+	color: cyan;
+}
+.click-add,.click-comment{
+	visibility: hidden;
+	text-align: center;
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	background: rgba(20,20,20,0.8);
+}
+.click-add{
+	height: 100%;
+}
+.add-in,.comment-in{
+	width: 80%;
+	margin: auto;
+}

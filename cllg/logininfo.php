@@ -1,0 +1,32 @@
+<?php
+session_start();
+if(isset($_POST['name']) && isset($_POST['password'])){
+	$n=$_POST['name'];
+	$p=$_POST['password'];
+	$con=mysqli_connect("localhost","root","pranay123","kmitregis");
+	$que="select * from regisinfo where username='$n' and password='$p'";
+	$res=mysqli_query($con,$que);
+	$c=mysqli_num_rows($res);
+	if($c==0){
+		$_SESSION['name']="-1-1";
+		header("location:login1.php");
+	}
+	else{
+		$c=mysqli_fetch_row($res);
+		$_SESSION['fname']=$c[0];
+		$_SESSION['lname']=$c[1];
+		$_SESSION['username']=$c[2];
+		$_SESSION['year']=$c[3];
+		$_SESSION['dept']=$c[4];
+		$_SESSION['sec']=$c[5];
+		$_SESSION['phno']=$c[6];
+		$_SESSION['email']=$c[7];
+		$_SESSION['img']=$c[9];
+		header("location:home.php");
+	}
+}
+else{
+	session_destroy();
+	header('location:login1.php');
+}
+?>

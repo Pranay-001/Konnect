@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+}
+.headerx{
+    padding: 10px 40px;
+    background:#0064c9 ;
+    height:100px;
+}
+.hlinkx{
+    text-decoration: none;
+    font-size: 30px;
+    padding-top: 20px;
+    padding-left: 10px;
+    margin-bottom: 0px;
+    width: 200px;
+    height:50px;
+}

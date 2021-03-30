@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head><title> Card in Bootstrap</title>
+        <meta charset="utf8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="konnect.css">
+        <script src="https://kit.fontawesome.com/fa40053145.js" crossorigin="anonymous"></script>
+        <style>
+            #fileupload{
+                margin-top: 30px;
+                padding: 20px;
+                border: 1px solid black;
+            }
+            select{
+                padding: 4px;
+                width: 220px;
+                height: 32px;
+                text-indent: 4px;    
+            }
+            #loginButton:hover{
+                color: red;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="headerx">
+            <div class="hlinkx">
+                <a href="#home" style="color: rgb(255, 255, 255); text-decoration: none;"><h1>KONNECT</h1></a>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark navbar-expand-sm" style="background: #292b2e;">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-user-circle fa-lg"></span> Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-trophy fa-lg"></span> Achievements</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="./card.html"><span class="fa fa-file fa-lg"></span> Files Shared</a></li> 
+                        <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-star fa-lg"></span> Placements</a></li>     
+                        
+                    </ul>
+                    <span class="navbar-text">
+                        <a id="loginButton" href="logininfo.php?"><span class="fa fa-sign-in"></span> Log Out</a>
+                    </span>
+                    
+                </div>
+            </div>
+        </nav>
+
+        <div class="container" id="fileupload">
+            <form method="POST" action="">
+                <div class="row">
+                    <div class="col-12 col-sm-3 col-md-3">
+                        <label for="course">Course</label><br>
+                        <input type="text" name="course"/>
+                        <!-- <select required>
+                            <option value="">Select a course</option>
+                            <option value="CN">Computer Networks</option>
+                            <option value="WT">Web Technologies</option>
+                            <option value="SE">Software Engineering</option>
+                            <option value="FLAT">Formal Languages</option>
+                        </select> -->
+                    </div>
+                    <div class="col-12 col-sm-3 col-md-3">
+                        <label>Year</label><br>
+                        <select>
+                            <option value="">Select Year</option>
+                            <option value="Year-I">Year-I</option>
+                            <option value="Year-II">Year-II</option>
+                            <option value="Year-III">Year-III</option>
+                            <option value="Year-IV">Year-IV</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-sm-3 col-md-3">
+                        <label>Branch</label><br>
+                        <select>
+                            <option value="">Select Branch</option>
+                            <option value="CSE">CSE</option>
+                            <option value="IT">IT</option>
+                            <option value="ECE">ECE</option>
+                            <option value="EIE">EIE</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-sm-3 col-md-3">
+                        <label>Section</label><br>
+                        <select>
+                            <option value="">Select Section</option>
+                            <option value="SEC-A">A</option>
+                            <option value="SEC-B">B</option>
+                            <option value="SEC-C">C</option>
+                            <option value="SEC-D">D</option>
+                            <option value="SEC-E">E</option>
+                            <option value="SEC-F">F</option>
+                            <option value="SEC-G">G</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                        <ul class="list-inline">
+                            <li style="display: inline;"><button class="btn btn-success addmore" onclick="add()" type="button"><i class="fa fa-plus"></i> Add More</button></li>
+                            <li style="display: inline; padding-left: 8px;"><button class="btn btn-primary"><i class="fa fa-upload"></i> Upload All</button></li>                
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-12">
+                        <div class="table-responsive" id="addmore">
+                            <table class="table table-bordered" id="table0">
+                                <tbody>
+                                    <tr>
+                                        <div class="col-xs-4 col-sm-6">
+                                            <td>
+                                                <input type="file" multiple name="file0">
+                                            </td>
+                                        </div>
+                                        <div class="col-xs-3 col-sm-3">
+                                            <td>
+                                                <button type="button" class="btn btn-sm btn-danger" onclick="removeC('table0')">
+                                                    <i class="fa fa-ban"></i> Delete
+                                                </button>
+                                            </td>
+                                        </div>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script type="text/javascript">
+            var count=1;
+            function add(){
+               document.getElementById("addmore").insertAdjacentHTML("afterend", 
+                "<table id='table"+count+"' class='table table-bordered'><tbody><tr><div class='col-xs-4 col-sm-6'>\
+                    <td><input type='file' name='file'"+count+" multiple></td>\
+                </div><div class='col-xs-3 col-sm-3'>\
+                    <td>\
+                        <button type='button' class='btn btn-sm btn-danger' onclick=removeC('table"+count+"')><i class='fa fa-ban'></i>\
+                         Delete</button>\
+                            </td>\
+                        </div>\
+                    </tr>\
+                </tbody></table>"); 
+               count++;
+            }
+            function removeC(iid){
+                var ele=document.getElementById(iid);
+                ele.parentNode.removeChild(ele);
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
